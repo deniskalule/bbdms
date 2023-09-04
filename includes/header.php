@@ -89,21 +89,24 @@
                     <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-lg-auto">
                             <li class="nav-item active mt-lg-0 mt-3">
-                                <a class="nav-link" href="index.php">Home
+                                <a class="nav-link" href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
                             <li class="nav-item mx-lg-4 my-lg-0 my-3">
-                                <a class="nav-link" href="about.php">About Us</a>
+                                <a class="nav-link" href="about.php"> <i class="fa fa-book" aria-hidden="true"></i> About Us</a>
                             </li>
                             <li class="nav-item mx-lg-4 my-lg-0 my-3">
-                                <a class="nav-link" href="contact.php">Contact Us</a>
+                                <a class="nav-link" href="contact.php"> <i class="fa fa-phone" aria-hidden="true"></i> Contact Us</a>
                             </li>
                             <?php if (strlen($_SESSION['bbdmsdid']!=0)) {?>
-                                
+                                <li class="nav-item mx-lg-4 my-lg-0 my-3">
+                                    <a class="nav-link" href="addpatient.php"> <i class="fa fa-bed" aria-hidden="true"></i> Add Patient</a>
+                                </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-user-circle" aria-hidden="true"></i>
                                         My Account
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -112,11 +115,16 @@
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="change-password.php">Change Password</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="request-received.php">Disease outbreaks</a>
+                                        <a class="dropdown-item" href="patients.php">View Patients</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="logout.php">Logout</a>
+                                        
                                     </div>
                                 </li>
+                                <li class="nav-item mx-lg-4 my-lg-0 my-3">
+                                    <a class="text-danger" href="logout.php" > <i class="fa fa-power-off" aria-hidden="true"></i> Logout</a>
+                                </li>
+                                
+
                             <?php } ?>
                             <?php if (strlen($_SESSION['bbdmsdid']==0)) {?>
                             <li class="nav-item mx-lg-4 my-lg-0 my-3">

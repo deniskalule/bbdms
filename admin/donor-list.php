@@ -65,6 +65,8 @@ $msg="Record deleted Successfully ";
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<!-- Sandstone Bootstrap CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
 	<!-- Bootstrap Datatables -->
 	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
 	<!-- Bootstrap social button library -->

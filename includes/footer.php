@@ -1,7 +1,7 @@
 <footer>
   <div class="container w3ls-footer-grids pt-sm-4 pt-3">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <h2 class="mb-sm-3 mb-2">
           <a href="index.php" class="text-white font-italic font-weight-bold">
             <span>Elderly & </span>Chronic Disease Information System 

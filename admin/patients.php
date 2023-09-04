@@ -38,7 +38,7 @@ $msg="Donor details public";
 if(isset($_REQUEST['del']))
 	{
 $did=intval($_GET['del']);
-$sql = "delete from tblblooddonars WHERE  id=:did";
+$sql = "delete from patients WHERE  id=:did";
 $query = $dbh->prepare($sql);
 $query-> bindParam(':did',$did, PDO::PARAM_STR);
 $query -> execute();
@@ -64,6 +64,7 @@ $msg="Record deleted Successfully ";
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<!-- Sandstone Bootstrap CSS -->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<!-- Bootstrap Datatables -->
 	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
@@ -116,29 +117,30 @@ $msg="Record deleted Successfully ";
 							<div class="panel-heading">Patients Info</div>
 								<!-- <a href="download-records.php" style="font-size:16px;" class="btn btn-info btn-sm">Download Volunteers List</a> -->
 							<div class="panel-body">
-							<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-							else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+							<?php if($error){?><div class="alert alert-danger errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+							else if($msg){?><div class="alert alert-success succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 			
 
 								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
 									<thead>
 										<tr>
-										<th>ID</th>
+											<th>ID</th>
 											<th>Name</th>
-											<th>Mobile No</th>
-											<th>Email</th>
-											<th>Age</th>
 											<th>Gender</th>
-											<!-- <th>Blood Group</th> -->
-											<th>address</th>
+											<th>DOB</th>
+											<th>Address</th>
+											<th>Contact</th>
+											<th>Disease</th>
+											<th>Disease Duration</th>
+											<th>Health Facility </th>
+											<th>Added by </th>
 											<th>Message </th>
-											<th>Addition date </th>
 											<th>action </th>
 										</tr>
 									</thead>
 									
 									<tbody>
-										<?php $sql = "SELECT * from  tblpatients ";
+										<?php $sql = "SELECT * from  patients ";
 										$query = $dbh -> prepare($sql);
 										$query->execute();
 										$results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -149,18 +151,30 @@ $msg="Record deleted Successfully ";
 										{?>	
 											<tr>
 														<td><?php echo htmlentities($cnt);?></td>
-														<td><?php echo htmlentities($result->name);?></td>
-														<td><?php echo htmlentities($result->contact);?></td>
-														<td><?php echo htmlentities($result->email);?></td>
-														<td><?php echo htmlentities($result->age);?></td>
+														<td><?php echo htmlentities($result->patient_name);?></td>
 														<td><?php echo htmlentities($result->gender);?></td>
+														<td><?php echo htmlentities($result->date_of_birth);?></td>
 														<td><?php echo htmlentities($result->address);?></td>
+														<td><?php echo htmlentities($result->contact);?></td>
+														<td><?php echo htmlentities($result->disease);?></td>
+														<td><?php echo htmlentities($result->disease_duration);?></td>
+														<td><?php echo htmlentities($result->health_facility);?></td>
+														<td><?php $uid = $result->volunteer;
+															 $sql = "SELECT * from  tblblooddonars where id=$uid ";
+															 $query = $dbh -> prepare($sql);
+															 $query->execute();
+															 $results=$query->fetchAll(PDO::FETCH_OBJ);
+
+															 foreach($results as $name)
+															 {
+																echo $name->FullName;
+															 }
+														?></td>
 														<td><?php echo htmlentities($result->message);?></td>
-														<td><?php echo htmlentities($result->creation_date);?></td>
 													
 													
 													<td>
-												        <a href="donor-list.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to delete this record')" class="btn btn-danger" style="margin-top:1%;"> Delete</a>
+												        <a href="patients.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to delete this record')" class="btn btn-danger" style="margin-top:1%;"> Delete</a>
 												    </td>
 											</tr>
 										<?php $cnt=$cnt+1; }} ?>

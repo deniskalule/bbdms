@@ -101,8 +101,11 @@ if (strlen($_SESSION['bbdmsdid']==0)) {
 				</span>
 			</div>
 			<div class="d-flex">
-				<div class="appoint-img">
-
+			<div class="img p-4 ml-5" style="
+					border:2px solid black;
+					height: 85vh;
+				">
+					<i class="fa fa-user" style="font-size: 30rem;" aria-hidden="true"></i>
 				</div>
 				<div class="contact-right-w3l appoint-form">
 					<h5 class="title-w3 text-center mb-5">Detail of Your profile</h5>

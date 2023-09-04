@@ -115,8 +115,10 @@ return true;
 				</span>
 			</div>
 			<div class="d-flex">
-				<div class="appoint-img">
-
+				<div class="img p-4 ml-5" style="
+					border:2px solid black;
+				">
+					<i class="fa fa-user" style="font-size: 30rem;" aria-hidden="true"></i>
 				</div>
 				<div class="contact-right-w3l appoint-form">
 					<h5 class="title-w3 text-center mb-5">Reset your password if needed</h5>

@@ -38,7 +38,10 @@ $msg="Data Deleted successfully";
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<!-- Sandstone Bootstrap CSS -->
+	
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
 	<!-- Bootstrap Datatables -->
 	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
 	<!-- Bootstrap social button library -->
@@ -89,44 +92,34 @@ $msg="Data Deleted successfully";
 						<div class="panel panel-default">
 							<div class="panel-heading">Listed  Diseases</div>
 							<div class="panel-body">
-							<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
-								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+							<?php if($error){?><div class=" alert alert-danger errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+							else if($msg){?><div class="alert alert-success succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+								<table id="zctb" class="display table table-striped table-bordered table-hover col-12" cellspacing="0" width="100%">
 									<thead>
 										<tr>
-										<th>#</th>
-												<th>Chronic Diseases</th>
+											<th>#</th>
+											<th>Chronic Diseases</th>
 											<th>Creation Date</th>
-										
-										
 											<th>Action</th>
 										</tr>
 									</thead>
-									<tfoot>
-										<tr>
-										<th>#</th>
-											<th>Chronic Diseases</th>
-											<th>Creation Date</th><th>Action</th>
-										</tr>
-										</tr>
-									</tfoot>
 									<tbody>
 
-<?php $sql = "SELECT * from  tblbloodgroup ";
-$query = $dbh -> prepare($sql);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{				?>	
+									<?php $sql = "SELECT * from  tblbloodgroup ";
+									$query = $dbh -> prepare($sql);
+									$query->execute();
+									$results=$query->fetchAll(PDO::FETCH_OBJ);
+									$cnt=1;
+									if($query->rowCount() > 0)
+									{
+									foreach($results as $result)
+									{				?>	
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
 											<td><?php echo htmlentities($result->BloodGroup);?></td>
 											<td><?php echo htmlentities($result->PostingDate);?></td>
-<td>
-<a href="manage-bloodgroup.php?del=<?php echo $result->id;?>" onclick="return confirm('Do you want to delete');"><i class="fa fa-close"></i></a></td>
+										<td>
+										<a href="manage-diseases.php?del=<?php echo $result->id;?>" onclick="return confirm('Do you want to delete');"><i class="fa fa-close"></i></a></td>
 										</tr>
 										<?php $cnt=$cnt+1; }} ?>
 										
