@@ -94,7 +94,7 @@ $msg="Data Deleted successfully";
 							<div class="panel-body">
 							<?php if($error){?><div class=" alert alert-danger errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 							else if($msg){?><div class="alert alert-success succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
-								<table id="zctb" class="display table table-striped table-bordered table-hover col-12" cellspacing="0" width="100%">
+								<table id="table" class="display table table-striped table-bordered table-hover col-12" cellspacing="0" width="100%">
 									<thead>
 										<tr>
 											<th>#</th>
@@ -150,6 +150,8 @@ $msg="Data Deleted successfully";
 	<script src="js/fileinput.js"></script>
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
+
+	
 </body>
 </html>
 <?php } ?>

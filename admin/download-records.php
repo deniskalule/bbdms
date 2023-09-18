@@ -18,7 +18,6 @@ if(strlen($_SESSION['alogin'])==0)
 											<th>Email</th>
 											<th>Age</th>
 											<th>Gender</th>
-											<th>Blood Group</th>
 											<th>address</th>
 											<th>Message </th>
 											<th>posting date </th>
@@ -44,8 +43,7 @@ echo '
 <td>'.	$MobileNumber= $result->MobileNumber.'</td> 
 <td>'.$EmailId= $result->EmailId.'</td> 
 <td>'.$Gender= $result->Gender.'</td> 
-<td>'.$Age= $result->Age.'</td> 
- <td>'.$BloodGroup=$result->BloodGroup.'</td>	
+<td>'.$Age= $result->Age.'</td> 	
   <td>'.$BloodGroup=$result->Address.'</td>	 
    <td>'.$BloodGroup=$result->Message.'</td>	
   <td>'.$BloodGroup=$result->PostingDate.'</td>	 					

@@ -15,14 +15,14 @@
 			
 			</li>
 			<hr color="#fff">
-			<li style="margin: -5px 0"><a href="donor-list.php"><i class="fa fa-users"></i> Volunteer List</a></li>
+			<li style="margin: -5px 0"><a href="volunteers.php"><i class="fa fa-users"></i> Volunteer List</a></li>
 			<hr color="#fff">
 			<li style="margin: -5px 0"><a href="update-contactinfo.php"><i class="fa fa-files-o"></i> Update Contact Info</a></li>
 			<hr color="#fff">
 			<li style="margin: -5px 0"><a href="manage-conactusquery.php"><i class="fa fa-files-o"></i> Inquiries</a></li>
 			<hr color="#fff">
 			
-			<li style="margin: -5px 0"><a href="donor-list.php"><i class="fa fa-users"></i> Reports</a></li>
+			<li style="margin: -5px 0"><a href="reports.php"><i class="fa fa-users"></i> Reports</a></li>
 			<hr color="#fff">
 		</ul>
 	</nav>

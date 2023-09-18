@@ -20,6 +20,7 @@
 	 
 	 
 	 $('#zctb').DataTable();
+	 $('#table').DataTable();
 	 
 	 
 	 $("#input-43").fileinput({

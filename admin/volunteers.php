@@ -116,7 +116,7 @@ $msg="Record deleted Successfully ";
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default mb-2">
 							<div class="panel-heading">Volunteers Info</div>
-								<a href="download-records.php" style="font-size:16px;" class="btn btn-info btn-sm">Download Volunteers List</a>
+								<a href="download-records.php" style="font-size:16px;" class="btn btn-success m-2 push-right. btn-sm">Download Volunteers List</a>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 							else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
@@ -161,16 +161,18 @@ $msg="Record deleted Successfully ";
 													
 													
 													<td>
+												<div class="d-flex">
 												<?php if($result->status==1)
 												{?>
-												<a href="donor-list.php?hidden=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to hiidden this detail')" class="btn btn-primary"> Make it Hidden</a> 
+												<a class="btn btn-sm btn-primary" href="volunteers.php?hidden=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to hiidden this detail')" class="btn btn-primary"> Make it Hidden</a> 
 												<?php } else {?>
 
-												<a href="donor-list.php?public=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Public this detail')" class="btn btn-primary"> Make it Public</a>
+												<a class="btn btn-sm btn-primary" href="volunteers.php?public=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Public this detail')" class="btn btn-primary"> Make it Public</a>
 
 												<?php } ?>
-												<a href="donor-list.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to delete this record')" class="btn btn-danger" style="margin-top:1%;"> Delete</a>
+												<a class="btn btn-sm btn-danger ml-3" href="volunteers.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to delete this record')" class="btn btn-danger" style="margin-top:1%;"> <i class="fa fa-trash" aria-hidden="true"></i></a>
 												</td>
+												</div>
 											</tr>
 										<?php $cnt=$cnt+1; }} ?>
 									</tbody>
