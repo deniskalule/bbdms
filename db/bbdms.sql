@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 04, 2023 at 12:14 PM
+-- Generation Time: Sep 23, 2023 at 03:56 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -38,18 +38,19 @@ CREATE TABLE `patients` (
   `disease_duration` varchar(20) NOT NULL,
   `health_facility` varchar(100) NOT NULL,
   `message` varchar(255) NOT NULL,
-  `volunteer` int(11) NOT NULL
+  `volunteer` int(11) NOT NULL,
+  `addition_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `patients`
 --
 
-INSERT INTO `patients` (`id`, `patient_name`, `gender`, `date_of_birth`, `address`, `contact`, `disease`, `disease_duration`, `health_facility`, `message`, `volunteer`) VALUES
-(1, 'Mubiru Joseph', 'Male', '1945-07-24', 'Nansana', '0768456321', 'Diabetes', '3 years', 'Wakiso Referral Hospital', 'He needs immediate medical assistance', 14),
-(2, 'Nalugo Immaculate', 'Female', '2023-08-25', 'Kibuli', '0768456321', 'Blood Pressure', '3 years', '', 'hi', 14),
-(3, 'Mpanga moses', 'Male', '2023-08-26', 'Nansana', '0768456321', 'Diabetes', '3 years', '', 'hu', 14),
-(5, 'Mubiito John', 'Male', '1966-06-07', 'Wakiso', '0765342516', 'Blood Pressure', '1 year', '', 'hi', 16);
+INSERT INTO `patients` (`id`, `patient_name`, `gender`, `date_of_birth`, `address`, `contact`, `disease`, `disease_duration`, `health_facility`, `message`, `volunteer`, `addition_date`) VALUES
+(1, 'Mubiru Joseph', 'Male', '1945-07-24', 'Nansana', '0768456321', 'Diabetes', '3 years', 'Wakiso Referral Hospital', 'He needs immediate medical assistance', 14, '2023-09-23 13:41:17'),
+(2, 'Nalugo Immaculate', 'Female', '2023-08-25', 'Kibuli', '0768456321', 'Blood Pressure', '3 years', '', 'hi', 14, '2023-09-23 13:41:17'),
+(3, 'Mpanga moses', 'Male', '2023-08-26', 'Nansana', '0768456321', 'Diabetes', '3 years', '', 'hu', 14, '2023-09-23 13:41:17'),
+(5, 'Mubiito John', 'Male', '1966-06-07', 'Wakiso', '0765342516', 'Blood Pressure', '1 year', '', 'hi', 16, '2023-09-23 13:41:17');
 
 -- --------------------------------------------------------
 
@@ -100,7 +101,7 @@ CREATE TABLE `tblblooddonars` (
 --
 
 INSERT INTO `tblblooddonars` (`id`, `FullName`, `MobileNumber`, `EmailId`, `Gender`, `Age`, `BloodGroup`, `Address`, `Message`, `PostingDate`, `status`, `Password`) VALUES
-(14, 'Denis Jotham Kalule', '0776481096', 'denisjothamzkalule@gmail.com', 'Male', 34, NULL, 'Nansana', ' am interested in volunteering', '2023-08-27 18:51:24', 1, '202cb962ac59075b964b07152d234b70'),
+(14, 'Denis Jotham Kalule', '0776481096', 'denisjothamzkalule@gmail.com', 'Male', 34, NULL, 'Nansana', ' am interested in volunteering', '2023-08-27 18:51:24', 0, '202cb962ac59075b964b07152d234b70'),
 (15, 'Nalugo Immaculate', '0776481096', 'immynalugo@gmail.com', 'Female', 34, NULL, 'Kibuli', ' hi', '2023-08-29 10:43:08', 1, '202cb962ac59075b964b07152d234b70'),
 (16, 'Shakirah Namugerwa', '0776481096', 'shakirahnamugerwa@gmail.com', 'Female', 45, NULL, 'Kampala', 'hello ', '2023-08-31 11:11:59', 1, '202cb962ac59075b964b07152d234b70');
 
